@@ -18,5 +18,5 @@
 
 
 References.
-
+https://wikidocs.net/16043
 https://github.com/VSFe/Algorithm_Study/blob/main/Concept/New/00_Special/Pythonic_Code_For_Coding_Test.md
