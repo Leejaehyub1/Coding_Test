@@ -7,3 +7,16 @@
 
 
 코딩테스트 문제 혹은 Python 자료형 및 함수를 정리.
+
+
+
+
+
+
+
+
+
+
+References.
+
+https://github.com/VSFe/Algorithm_Study/blob/main/Concept/New/00_Special/Pythonic_Code_For_Coding_Test.md
