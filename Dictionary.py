@@ -64,6 +64,15 @@ for i,p in a.items():
 
 
 
+# Shallow Copy
+b = a.copy()
+b = dict(a)
+
+# Deep Copy
+import copy
+b = copy.deepcopy(a)
+
+
 
 # pprint 함수 사용하면 가독성이 좋다.
 # 줄바꿈이 이쁘게 됨.
