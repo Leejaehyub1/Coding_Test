@@ -1,31 +1,18 @@
-from itertools import combinations
+def solution(skill, skill_trees):
+    answer = 0
 
+    skill = list(skill)
+    for st in skill_trees:
+        temp = skill[:]
+        for s in st:
+            if (s in temp):
+                if (s == temp[0]):
+                    temp.pop(0)
 
-def solution(relation):
-    row = len(relation)
-    col = len(relation[0])
+                else:
+                    answer -= 1
+                    break
 
-    candidate = []
-    for i in range(1, col + 1):
-        candidate.extend(combinations(range(col), i))
+        answer += 1
 
-    result = []
-    for can in candidate:
-        temp_list = []
-        for rel in relation:
-            temp = []
-            for c in can:
-                temp.append(rel[c])
-
-            temp_list.append(tuple(temp))
-
-        if (len(set(temp_list)) == len(relation)):
-            result.append(can)
-
-    answer = set(result[:])
-    for i in range(len(result)):
-        for k in range(i + 1, len(result)):
-            if set(result[i]).issubset(result[k]):
-                answer.discard(result[k])
-
-    return len(answer)
+    return answer
