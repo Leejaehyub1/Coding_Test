@@ -1,31 +1,16 @@
-from itertools import combinations
+def solution(s):
+    answer = []
 
+    count = 0
+    zero_num = 0
 
-def solution(relation):
-    row = len(relation)
-    col = len(relation[0])
+    while len(s) != 1:
 
-    candidate = []
-    for i in range(1, col + 1):
-        candidate.extend(combinations(range(col), i))
+        while '0' in s:
+            s = s.replace('0', '', 1)
+            zero_num += 1
 
-    result = []
-    for can in candidate:
-        temp_list = []
-        for rel in relation:
-            temp = []
-            for c in can:
-                temp.append(rel[c])
+        s = bin(len(s))[2:]
+        count += 1
 
-            temp_list.append(tuple(temp))
-
-        if (len(set(temp_list)) == len(relation)):
-            result.append(can)
-
-    answer = set(result[:])
-    for i in range(len(result)):
-        for k in range(i + 1, len(result)):
-            if set(result[i]).issubset(result[k]):
-                answer.discard(result[k])
-
-    return len(answer)
+    return [count, zero_num]
