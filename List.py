@@ -1,5 +1,5 @@
 #List 정리.
-
+#출처: https://wikidocs.net/16041
 
 #Stack
 stack = []
@@ -31,3 +31,15 @@ x = ['aaa', 'bbb', 'ccc']
 y = 'def'
 x.extend(y)
 print(x) #['aaa', 'bbb', 'ccc', 'd', 'e', 'f']
+
+
+
+#reverse: 거꾸로 뒤집기. (내림차순X)
+a = [1,4,2,5,8]
+a.reverse() #[8,5,2,4,1]
+
+#sort
+a = [1,4,2,5,8]
+a.sort() #[1,2,4,5,8]
+
+a.sort(reverse=True)    #[8,5,4,2,1]
