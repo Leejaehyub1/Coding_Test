@@ -84,3 +84,11 @@ print(ans)
 a = 5
 temp = bin(a)    #0b101
 ans = temp[2:]   #101
+
+
+# join 함수 => list에 원소들이 모두 string이어야 한다. int는 불가능
+a = ['h', 'e', 'l', 'l', 'o']
+print("".join(a))   #가능
+
+b = [1,2,3,4,5]
+print("".join(a))   #불가능
