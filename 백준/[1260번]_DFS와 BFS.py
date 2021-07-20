@@ -1,7 +1,12 @@
+# import sys
+# r = sys.stdin.readline
+# r().split()
+# N,M = map(int, input().split())
 
 a = input().split()
 N, M, start = int(a[0]), int(a[1]), int(a[2])
 matrix = [[0]*(N+1) for _ in range(N+1)]
+
 
 for _ in range(M):
     a, b = map(int, input().split())
