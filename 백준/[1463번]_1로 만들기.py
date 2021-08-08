@@ -1,13 +1,17 @@
 N = int(input())
-num = 0
-DP = {1}
 
-while(N not in DP):
-    temp = set()
-    for i in DP:
-        temp.update([i+1, 2*i, 3*i])
+DP = [0] * (N+1)
 
-    DP = temp
-    num += 1
+for i in range(2, N+1):
 
-print(num)
+    DP[i] = DP[i-1] + 1
+    if (i % 3 == 0):
+        DP[i] = min(DP[i // 3] + 1, DP[i])
+
+
+    if(i % 2 == 0):
+        DP[i] = min(DP[i//2] + 1, DP[i])
+
+
+
+print(DP[N])
