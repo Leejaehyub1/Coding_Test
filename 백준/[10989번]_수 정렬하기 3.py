@@ -1,15 +1,16 @@
-import sys
-
-N = int(sys.stdin.readline())
-
-arr = [0] * 10000002
-
-for _ in range(N):
-    k = int(sys.stdin.readline())
-    arr[k] += 1
-
-for i in range(len(arr)):
-    if arr[i] != 0:
-        for j in range(arr[i]):
-            print(i)
+# import sys
+#
+# N = int(sys.stdin.readline())
+#
+# arr = [0] * 10000002
+#
+# for _ in range(N):
+#     k = int(sys.stdin.readline())
+#     arr[k] += 1
+#
+# for i in range(len(arr)):
+#     if arr[i] != 0:
+#         for j in range(arr[i]):
+#             print(i)
+#
 
