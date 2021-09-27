@@ -15,16 +15,16 @@ temp = [i for i in range(N)]
 combi_half =  list(itertools.combinations(temp, half_num))
 
 minimum = 36101
-# for a in A:
-#     print(*a)
+
+# N=6, 6C3
+#combi_half = [(0,1,2),(0,1,3) ]
 
 for combi in combi_half:
-    # print(combi)
-    team_not = [i for i in range(N)]
-    # print(team_not)
+    team_not = [i for i in range(N)] # 0 ~ 5
     for c in combi:
-        # print(c)
         team_not.remove(c)
+    # team_not은 combi에 없는 애들
+    #combi_1은 combi(크기가 3)에서 선택된 애들 끼리 choose 2(3choose 2) 해서 sum을 구한다
 
     combi_1 = list(itertools.combinations(combi, 2))
     sum1 = 0
@@ -41,8 +41,5 @@ for combi in combi_half:
     diff = abs(sum1 - sum2)
     if diff < minimum:
         minimum = diff
-    # print()
 
-
-# print("ans")
 print(minimum)
