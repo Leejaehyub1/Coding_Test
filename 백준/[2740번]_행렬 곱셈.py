@@ -18,4 +18,3 @@ for n in range(N):
 
 for ans in answer:
     print(*ans)
-

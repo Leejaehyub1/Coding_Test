@@ -12,3 +12,7 @@ def sol(a,b,c):
             return temp * temp * a % c
 
 print(sol(a,b,c))
+
+
+
+
