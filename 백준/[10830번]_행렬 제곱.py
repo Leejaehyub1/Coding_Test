@@ -1,4 +1,5 @@
 import sys
+
 N, B = map(int, input().split())
 matrix1 = []
 
@@ -6,9 +7,8 @@ for _ in range(N):
     matrix1.append(list(map(int, sys.stdin.readline().split())))
 
 
-
 def multiple(matrix1, matrix2):
-    answer = [[0]*N for _ in range(N)]
+    answer = [[0] * N for _ in range(N)]
     for n in range(N):
         for m in range(N):
             for k in range(N):
@@ -16,27 +16,25 @@ def multiple(matrix1, matrix2):
             answer[n][m] %= 1000
     return answer
 
+
 def sol(b, matrix):
     if b == 1:
         return matrix
     elif b == 2:
         return multiple(matrix, matrix)
     else:
-        temp = sol(b//2, matrix)
-        if b%2 == 0:
+        temp = sol(b // 2, matrix)
+        if b % 2 == 0:
             return multiple(temp, temp)
         else:
-            return multiple(matrix, multiple(temp,temp))
+            return multiple(matrix, multiple(temp, temp))
 
 
 ans = (sol(B, matrix1))
 for a in ans:
     for k in a:
-        print(k%1000, end=' ')
+        print(k % 1000, end=' ')
     print()
-
-
-
 
 #
 # def mul(n,matrix1,matrix2):
