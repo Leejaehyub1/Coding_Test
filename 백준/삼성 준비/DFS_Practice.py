@@ -29,9 +29,9 @@
 # print(*d)
 # print(*b)
 
-
-N, M, V = map(int, input().split())
-matrix = [[0]*(N+1) for _ in range (N+1)]
+#
+# N, M, V = map(int, input().split())
+# matrix = [[0]*(N+1) for _ in range (N+1)]
 
 # for _ in range(M):
 #     x, y = map(int, input().split())
@@ -60,3 +60,15 @@ matrix = [[0]*(N+1) for _ in range (N+1)]
 # print(bfs(V))
 #
 #
+
+
+
+
+
+
+
+
+
+
+
+
