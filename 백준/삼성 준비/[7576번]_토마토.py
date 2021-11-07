@@ -4,7 +4,7 @@ from collections import deque
 def bfs(matrix, changed, N, M):
     dx = [0, 0, 1, -1]
     dy = [1, -1, 0, 0]
-    day = -1
+    day = 1
     while changed:
         day += 1
         for _ in range(len(changed)):
@@ -15,7 +15,7 @@ def bfs(matrix, changed, N, M):
                 if 0 <= nx < N and 0 <= ny < M:
                     if matrix[nx][ny] == 0:
                         changed.append((nx, ny))
-                        matrix[nx][ny] = 1
+                        matrix[nx][ny] = day
     for m in matrix:
         if 0 in m:
             print("-1")
@@ -35,5 +35,6 @@ for i in range(N):
             changed.append((i,k))
 
 bfs(matrix, changed, N, M)
-
+for m in matrix:
+    print(m)
 
