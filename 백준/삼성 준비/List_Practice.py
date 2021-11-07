@@ -92,19 +92,51 @@ matrix = [[0,2,3],[4,0,0],[7,0,8]]
 #     for r in range(len(temp)):
 #         matrix[N-r-1][c] = temp.pop()
 
-for c in range(len(matrix[0])):
-    temp = []
-    for r in range(len(matrix)):
+# for c in range(len(matrix[0])):
+#     temp = []
+#     for r in range(len(matrix)):
+#         #0이 아니면 push
+#         if matrix[r][c] > 0:
+#             temp.append(matrix[r][c])
+#             matrix[r][c] = 0
+#
+#         #-1 만나는 순간 전부 pop
+#         elif matrix[r][c] == -1:
+#             N = len(matrix)
+#             for w in range(len(temp)):
+#                 matrix[N - w - 1][c] = temp.pop()
+#
+from collections import deque
+matrix = [[0,2,0,0,5],
+          [3,-1,0,0,0],
+          [2,0,0,0,0],
+          [-1,5,0,0,0],
+          [0,3,0,0,3]]
 
+for m in matrix:
+    print(m)
 
-        #0이 아니면 push
-        if matrix[r][c] != 0:
-            temp.append(matrix[r][c])
-            matrix[r][c] = 0
+print()
+N = len(matrix)
+def gravity(matrix):
+    N = len(matrix)
+    for c in range(N):
+        fixed = [False] * N
+        fixed[-1] = True
+        for r in range(N-1, -1, -1):
+            if 0 <= matrix[r][c]:
+                temp = r
+                while True:
+                    if 0 <= temp+1 < N and matrix[temp+1][c] == -2:
+                        matrix[temp+1][c] = matrix[temp][c]
+                        matrix[temp][c] = -2
+                        temp += 1
+                    else:
+                        break
+    return
 
-        #-1 만나는 순간 전부 pop
-        elif matrix[r][c] == -1:
-            N = len(matrix)
-            for w in range(len(temp)):
-                matrix[N - w - 1][c] = temp.pop()
+gravity(matrix)
+for m in matrix:
+    print(m)
+
 
