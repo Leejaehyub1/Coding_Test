@@ -18,13 +18,30 @@ def BFS(start):
                 visited.append(c)
                 queue.append(c)
     return visited
+def BFS(start):
+    queue = [start]
+    visited = [start]
+    while queue:
+        n = queue.pop(0)
+        for c in range(len(matrix[0])):
+            if(matrix[n][c]==1 and c not in visited):
+                visited.append(c)
+                queue.append(c)
 
-def DFS(start, visited):
-    visited += [start]
-    for c in range(len(matrix[0])):
-        if ((matrix[start][c]==1) and (c not in visited)):
-            DFS(c, visited)
-    return visited
+# def DFS(start, visited):
+#     visited += [start]
+#     for c in range(len(matrix[0])):
+#         if ((matrix[start][c]==1) and (c not in visited)):
+#             DFS(c, visited)
+#     return visited
+
+# def DFS(start, visited):
+#     visited += [start]
+#     for c in range(len(matrix[0])):
+#         if(matrix[start][c]==1 and c not in visited):
+#             DFS(c, visited)
+#     return visited
+
 
 print(*DFS(start, []))
 print(*BFS(start))
