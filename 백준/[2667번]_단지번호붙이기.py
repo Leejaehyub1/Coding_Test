@@ -31,6 +31,7 @@ for i in range(N):
         if (matrix[i][k] == 1 and visited[i][k] == 0):
             cnt += 1
             bfs(i,k,cnt)
+
 ans = []
 for c in range(1,cnt+1):
     num = 0
