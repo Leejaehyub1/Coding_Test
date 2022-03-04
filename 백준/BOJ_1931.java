@@ -22,18 +22,17 @@ public class BOJ_1931 {
 		Arrays.sort(arr);
 		int count = 0;
 		int time = 0;
-		System.out.println(Arrays.toString(arr));
+//		System.out.println(Arrays.toString(arr));
 		
 		for(int i=0;i<N;i++) {
-			System.out.printf("%d %d\n", arr[i].start, time);
-			if(arr[i].start >= time) {
+			if(time <= arr[i].start) {
 				count++;
-				time += arr[i].start+arr[i].len;
+				time = arr[i].end;
+//				System.out.println(arr[i].toString());
 			}
 		}
-		System.out.println();
-		System.out.println();
 		System.out.println(count);
+
 		
 		
 	}
@@ -42,21 +41,21 @@ public class BOJ_1931 {
 }
 class Meeting implements Comparable<Meeting>{
 	int start;
-	int len;
-	public Meeting(int start, int len) {
+	int end;
+	public Meeting(int start, int end) {
 		super();
 		this.start = start;
-		this.len = len;
+		this.end = end;
 	}
 	
 	@Override
 	public int compareTo(Meeting m) {
-		if(this.start == m.start)	return this.len-m.len;
-		return this.start-m.start;
+		if(this.end == m.end)	return this.start-m.start;
+		return this.end-m.end;
 	}
 	
 	@Override
 	public String toString() {
-		return "["+start+", "+len+"]";
+		return "["+start+", "+end+"]";
 	}
 }
