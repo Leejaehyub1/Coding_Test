@@ -14,13 +14,13 @@ public class BOJ_1330 {
 		if(A < B){
 			System.out.println("<");
 		}
-		else if(A==B) {
-			System.out.println("==");
+		else if(A>B) {
+			System.out.println(">");
 		}
 		
 		
 		else {
-			System.out.println(">");
+			System.out.println("==");
 		}
 
 	}
