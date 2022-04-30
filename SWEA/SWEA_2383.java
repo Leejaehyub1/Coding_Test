@@ -6,7 +6,8 @@ import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
 public class SWEA_2383 {
-	static int N, M, S;
+	static int N, M;
+	static int S;
 	static int[] num;
 	static int min;
 	
